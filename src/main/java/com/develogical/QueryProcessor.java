@@ -2,15 +2,15 @@ package com.develogical;
 
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 
 public class QueryProcessor {
 
-    List<AbstractQueryProcessor> queryProcessors = Collections.singletonList(new OperatorQueryProcessor());
+    List<AbstractQueryProcessor> queryProcessors = new ArrayList<>();
 
     public QueryProcessor() {
+        queryProcessors.add(new OperatorQueryProcessor());
         queryProcessors.add(new ComparisonProcessor());
     }
 
