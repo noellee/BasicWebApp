@@ -2,12 +2,13 @@ package com.develogical;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 
 public class QueryProcessor {
 
-    List<AbstractQueryProcessor> queryProcessors = new ArrayList<>();
+    List<AbstractQueryProcessor> queryProcessors = Collections.singletonList(new OperatorQueryProcessor());
 
     public String process(String query) {
         if (query.toLowerCase().contains("shakespeare")) {
